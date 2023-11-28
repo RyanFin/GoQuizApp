@@ -1,6 +1,7 @@
 package main
 
 import (
+	"RyanFin/GoQuizApp/pkg/constants"
 	"fmt"
 	"io/ioutil"
 	"path/filepath"
@@ -14,7 +15,7 @@ type Config struct {
 
 func main() {
 	// load config file from scratch
-	filename, err := filepath.Abs("config.yml")
+	filename, err := filepath.Abs(constants.FileName)
 	if err != nil {
 		panic(err)
 	}
@@ -27,7 +28,7 @@ func main() {
 
 	var config Config
 
-	err = yaml.Unmarshal(yamlFile, &config)
+	err = yaml.Unmarshal(yamlFile, &config.File)
 	if err != nil {
 		panic(err)
 	}
