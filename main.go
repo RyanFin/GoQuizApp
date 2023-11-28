@@ -59,14 +59,14 @@ func startQuiz(quizData [][]string) {
 		question := e[0]
 		answer := e[1]
 
-		fmt.Printf("[Question %v] What is %s:\n", i, question)
+		fmt.Printf("\n[Question %v] What is %s:\n", i, question)
 		fmt.Print("Enter your answer: ")
 
 		var input string
 		fmt.Scanln(&input)
 
 		if input != answer {
-			fmt.Println("Incorrect. ")
+			fmt.Println("Incorrect.")
 			continue
 		}
 
@@ -76,5 +76,5 @@ func startQuiz(quizData [][]string) {
 		}
 	}
 
-	fmt.Printf("Final Score: %v/%v\n", score, maxScore)
+	fmt.Printf("\nFinal Score: %v/%v\n", score, maxScore)
 }
